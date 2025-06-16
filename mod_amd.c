@@ -331,7 +331,8 @@ static switch_bool_t amd_handle_voiced_frame(amd_vad_t *vad, const switch_frame_
 static void amd_fire_event(switch_channel_t *channel) {
     switch_event_t      *event;
     switch_status_t     status;
-    status = switch_event_create_subclass(&event, SWITCH_EVENT_CLONE, AMD_EVENT_NAME);
+    // status = switch_event_create_subclass(&event, SWITCH_EVENT_CLONE, AMD_EVENT_NAME);
+    status = switch_event_create_subclass(&event, SWITCH_EVENT_CUSTOM, AMD_EVENT_NAME);
     if (status != SWITCH_STATUS_SUCCESS) {
         return;
     }
